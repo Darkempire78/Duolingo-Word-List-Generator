@@ -4,6 +4,11 @@
 
 A simple script to generate a word list from Duolingo for easy vocabulary review.
 
+It contains:
+- the word in the language you are learning
+- the translation 
+- the pronunciation (audio)
+
 ## Installation
 
 ```bash
@@ -14,7 +19,7 @@ Then Configure `config.example.json` and rename it to `config.json`
 
 ## Example
 
-
+![](screenshot.png)
 
 ## Discord
 
