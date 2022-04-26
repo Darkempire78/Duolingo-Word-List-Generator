@@ -22,6 +22,7 @@ except IOError:
     audio = {}
 
 for i in words:
+    translation = lingo.get_translations([i["word_string"]], source=data["learningLanguage"], target=data["yourLanguage"])
 
     # Get the audio file
     wordAudio = None
@@ -36,6 +37,7 @@ for i in words:
     if i["infinitive"]:
         if i["infinitive"] not in verbs: 
             verbs.append(i["infinitive"])
+            
     else:
         if i["skill"] in dico:
             dico[i["skill"]].append({
@@ -44,7 +46,7 @@ for i in words:
                 "pos": i["pos"],
                 "gender": i["gender"],
                 "audio": wordAudio,
-                "translation": lingo.get_translations([i["word_string"]], source=data["learningLanguage"], target=data["yourLanguage"])
+                "translation": translation
             })
 
         else:
@@ -54,7 +56,7 @@ for i in words:
                 "pos": i["pos"],
                 "gender": i["gender"],
                 "audio": wordAudio,
-                "translation": lingo.get_translations([i["word_string"]], source=data["learningLanguage"], target=data["yourLanguage"])
+                "translation": translation
             }]
 
 # Update audio.json
