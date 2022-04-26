@@ -8,14 +8,15 @@ It contains:
 - the word in the language you are learning
 - the translation 
 - the pronunciation (audio)
+- the verbs
 
 ## Installation
 
 ```bash
-$ pip install duolingo-api
+$ pip install -r requirements.txt
 ```
 
-Then Configure `config.example.json` and rename it to `config.json`
+Then configure `config example.json` and rename it to `config.json`
 
 ## Example
 
