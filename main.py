@@ -37,7 +37,7 @@ for i in words:
     if i["infinitive"]:
         if i["infinitive"] not in verbs: 
             verbs.append(i["infinitive"])
-            
+
     else:
         if i["skill"] in dico:
             dico[i["skill"]].append({
@@ -102,8 +102,8 @@ with open("duolingo.html", "w", encoding="UTF-8") as file:
     text += "<details><summary><b>VERBS</b></summary>"
 
     for verb in verbs:
-        text += f"\n<h1>{verb}</h1>\n<table>\n"
-        text += f"\n<h1>Presente</h2>\n<table>\n"
+        text += f"\n<h1>{verb}</h1>\n"
+        text += f"\n<h3>Presente</h3><table>"
 
         conjugation = cg.conjugate(verb)
         conj = conjugation["moods"]["indicativo"]["presente"]
