@@ -36,26 +36,26 @@ for i in words:
     if i["infinitive"]:
         if i["infinitive"] not in verbs: 
             verbs.append(i["infinitive"])
-
-    if i["skill"] in dico:
-        dico[i["skill"]].append({
-            "infinitive": i["infinitive"],
-            "word_string": i["word_string"],
-            "pos": i["pos"],
-            "gender": i["gender"],
-            "audio": wordAudio,
-            "translation": lingo.get_translations([i["word_string"]], source=data["learningLanguage"], target=data["yourLanguage"])
-        })
-
     else:
-        dico[i["skill"]] = [{
-            "infinitive": i["infinitive"],
-            "word_string": i["word_string"],
-            "pos": i["pos"],
-            "gender": i["gender"],
-            "audio": wordAudio,
-            "translation": lingo.get_translations([i["word_string"]], source=data["learningLanguage"], target=data["yourLanguage"])
-        }]
+        if i["skill"] in dico:
+            dico[i["skill"]].append({
+                "infinitive": i["infinitive"],
+                "word_string": i["word_string"],
+                "pos": i["pos"],
+                "gender": i["gender"],
+                "audio": wordAudio,
+                "translation": lingo.get_translations([i["word_string"]], source=data["learningLanguage"], target=data["yourLanguage"])
+            })
+
+        else:
+            dico[i["skill"]] = [{
+                "infinitive": i["infinitive"],
+                "word_string": i["word_string"],
+                "pos": i["pos"],
+                "gender": i["gender"],
+                "audio": wordAudio,
+                "translation": lingo.get_translations([i["word_string"]], source=data["learningLanguage"], target=data["yourLanguage"])
+            }]
 
 # Update audio.json
 with open('audio.json', 'w', encoding="UTF-8") as audioFile:
