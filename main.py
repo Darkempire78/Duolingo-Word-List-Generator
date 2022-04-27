@@ -89,6 +89,7 @@ with open("duolingo.html", "w", encoding="UTF-8") as file:
     # Vocabulary
     text += "<details><summary><b>VOCABULARY</b></summary>"
 
+    dico = dict(sorted(dico.items()))
     for key, values in dico.items():
         text += f"\n<h1>{key}</h1>\n<table>\n"
         values = sorted(values, key=lambda value: value["word_string"])
