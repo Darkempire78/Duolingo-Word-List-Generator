@@ -101,6 +101,7 @@ with open("duolingo.html", "w", encoding="UTF-8") as file:
     # Verbs
     text += "<details><summary><b>VERBS</b></summary>"
 
+    verbs.sort()
     for verb in verbs:
         text += f"\n<h1>{verb}</h1>\n"
         text += f"\n<h3>Presente</h3><table>"
